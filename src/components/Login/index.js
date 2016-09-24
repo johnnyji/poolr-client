@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import ActionCreators from '../../actions';
 import {connect} from 'react-redux';
 import Button from 'ui-components/src/Button';
-import './index.css';
+import './index.scss';
 
 class Login extends Component {
 
