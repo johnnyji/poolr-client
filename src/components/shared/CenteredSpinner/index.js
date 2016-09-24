@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
 import Spinner from 'ui-components/src/Spinner';
 import './index.css';
 

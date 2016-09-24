@@ -6,13 +6,11 @@ import reducers from '../reducers';
 // Here we create the final store,
 // If we're in production, we want to leave out development middleware/tools
 let finalCreateStore;
+
 if (process.env.NODE_ENV === 'production') {
   finalCreateStore = applyMiddleware(thunkMiddleware)(createStore);
 } else {
-  finalCreateStore = applyMiddleware(
-    thunkMiddleware,
-    createLogger()
-  )(createStore);
+  finalCreateStore = applyMiddleware(thunkMiddleware, createLogger())(createStore);
 }
 
 // Exports the function that creates a store

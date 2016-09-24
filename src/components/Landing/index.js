@@ -8,7 +8,7 @@ export default class Landing extends Component {
     return (
       <div className='Landing'>
         Landing Page!
-        <Link to='/login'>Login with Linkedin!</Link>
+        <Link to='/login'>Login!</Link>
       </div>
     );
   }

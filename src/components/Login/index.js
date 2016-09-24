@@ -1,16 +1,13 @@
 import React, {Component, PropTypes} from 'react';
 import ActionCreators from '../../actions';
+import {connect} from 'react-redux';
+import Button from 'ui-components/src/Button';
 
-@connect((state) => ({
-  currentUser: state.auth.currentUser
-}))
-export default class Login extends Component {
-
-  static displayName = CLS;
+class Login extends Component {
 
   static propTypes = {
     currentUser: PropTypes.object,
-    dispatch: PropTypes.object.isRequired
+    dispatch: PropTypes.func.isRequired
   };
 
   componentWillMount() {
@@ -41,3 +38,6 @@ export default class Login extends Component {
 
 }
 
+export default connect((state) => ({
+  currentUser: state.auth.currentUser
+}))(Login);

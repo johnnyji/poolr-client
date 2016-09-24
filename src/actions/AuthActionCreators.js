@@ -1,19 +1,23 @@
 import request from 'request';
+import ActionCreators from './index';
+import ActionTypes from './ActionTypes';
 
 export default {
   
   login() {
-    dispatch({type: AUTH}); 
-
     return (dispatch) => {
-      request('login path', (err, resp, body) => {
-        debugger;
+      dispatch({type: ActionTypes.AUTH}); 
+
+      request('login path', (error, resp, body) => {
         if (error) {
-          // Handle Error Case
+          dispatch(ActionCreators.app.addFlashMessage('error', error.message));
+          return;
         }
 
+        // TODO: Where is the current user in the response JSON
+        debugger;
         dispatch({
-          type: AUTH_SUCCESS,
+          type: ActionTypes.AUTH_SUCCESS,
           data: {currentUser: body.currentUser}
         });
       });
