@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router';
+import './index.css';
 
 export default class Landing extends Component {
 
@@ -6,6 +8,7 @@ export default class Landing extends Component {
     return (
       <div className='Landing'>
         Landing Page!
+        <Link to='/login'>Login with Linkedin!</Link>
       </div>
     );
   }

@@ -11,6 +11,7 @@ import Landing from './components/Landing';
 const routes = (
   <Route component={App} path="/">
     <IndexRoute component={Landing} />
+    <Route component={Login} path="login" />
   </Route>
 );
 
