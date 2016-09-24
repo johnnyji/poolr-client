@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import CenteredSpinner from '../shared/CenteredSpinner';
 import FlashMessageContainer from '../shared/FlashMessage/FlashMessageContainer';
 import ImmutablePropTypes from 'react-immutable-proptypes';
+import {presets, RouteTransition} from 'react-router-transition';
 import './index.css';
 
 // This is for flash message animating
@@ -13,7 +14,8 @@ class App extends Component {
 
   static propTypes = {
     currentUser: PropTypes.object,
-    flashMessages: ImmutablePropTypes.orderedMap
+    flashMessages: ImmutablePropTypes.orderedMap,
+    location: PropTypes.object.isRequired
   };
 
   static contextTypes = {
@@ -32,7 +34,13 @@ class App extends Component {
     return (
       <div className="App">
         <FlashMessageContainer items={this.props.flashMessages.valueSeq().toList()} onDismiss={this._handleDismissFlash} />
-        {this.props.children}
+        <RouteTransition
+          component='div'
+          runOnMount={true}
+          pathname={this.props.location.pathname}
+          {...presets.slideLeft}>
+          {this.props.children}
+        </RouteTransition>
       </div>
     );
   }
