@@ -6,13 +6,16 @@ import {Provider} from 'react-redux';
 import './index.css';
 
 import App from './components/App';
+import Dashboard from './components/Dashboard';
 import Landing from './components/Landing';
 import Login from './components/Login';
 
 const routes = (
-  <Route component={App} path="/">
+  <Route component={App} path='/'>
     <IndexRoute component={Landing} />
-    <Route component={Login} path="login" />
+    <Route component={Login} path='login' />
+    <Route component={Dashboard} path='dashboard'>
+    </Route>
   </Route>
 );
 

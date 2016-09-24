@@ -1,6 +1,6 @@
 .Landing {
-  display: flex;
   align-items: center;
+  display: flex;
   flex-direction: column;
-  background-color: red;
+  height: 100%;
 }
