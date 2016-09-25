@@ -22,8 +22,8 @@ export default class OnboardingDriverOrRider extends Component {
 
   _handleChoose = (name) => {
     this.context.dispatch(ActionCreators.auth.update(this.props.currentUser.id, {
-      isDriver: name === 'driver',
-      onBoarding: 'driver-creds'
+      ...this.props.currentUser,
+      isDriver: name === 'driver'
     }));
   };
 

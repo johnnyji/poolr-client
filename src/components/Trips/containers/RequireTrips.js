@@ -1,8 +1,9 @@
 import React, {Component, PropTypes} from 'react';
 import ActionCreators from '../../../actions';
+import {connect} from 'react-redux';
 import CenteredSpinner from '../../shared/CenteredSpinner';
 
-export default (ComposedComponent) => (
+export default (ComposedComponent) => {
   
   class RequireTrips extends Component {
 
@@ -31,4 +32,5 @@ export default (ComposedComponent) => (
     fetching: state.trips.fetching,
     fetched: state.trips.fetched
   }))(RequireTrips);
-});
+
+};

@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import RequireTrips from './containers/RequireTrips';
 import TripCard from './components/TripCard';
 
-export default class TripsIndex extends Component {
+class TripsIndex extends Component {
 
   static displayName = 'TripsIndex';
 
@@ -26,4 +26,4 @@ export default class TripsIndex extends Component {
 
 }
 
-export default RequiresTrip(TripsIndex);
+export default RequireTrips(TripsIndex);

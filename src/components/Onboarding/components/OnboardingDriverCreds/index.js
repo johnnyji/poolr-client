@@ -34,9 +34,8 @@ export default class OnboardingDriverCreds extends Component {
 
   _handleSubmit = () => {
     this.context.dispatch(ActionCreators.auth.update(this.props.currentUser.id, {
-      licenseNumber: this.state.form.licenseNumber,
-      // Set onboarding to empty string to finish the process
-      onBoarding: ''
+      ...this.props.currentUser,
+      licenseNumber: this.state.form.licenseNumber
     }));
   };
 

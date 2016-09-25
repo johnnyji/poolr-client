@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react';
+import GoogleMap from 'google-map-react';
 import secrets from '../../../../../secrets';
 
 const LAT_LNG = PropTypes.shape({
@@ -39,6 +40,8 @@ export default class TripMap extends Component {
   }
 
   _renderMarkers = () => {
+    const {markers} = this.props;
+
     if (!markers) return null;
   };
 

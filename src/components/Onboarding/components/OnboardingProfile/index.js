@@ -18,8 +18,8 @@ export default class OnboardingProfile extends Component {
     return (
       <div className='OnboardingProfile'>
         <img src={currentUser.profilePic || DEFAULT_PIC} />
-        <Input onUpdate={this._handleUpdate} value={currentUser.fName} />
-        <Input onUpdate={this._handleUpdate} value={currentUser.lName} />
+        <Input onUpdate={this._handleUpdate} value={currentUser.firstName} />
+        <Input onUpdate={this._handleUpdate} value={currentUser.lastName} />
         <Button onClick={this._handleSubmit}>Submit</Button>
       </div>
     );
@@ -33,9 +33,9 @@ export default class OnboardingProfile extends Component {
 
   _handleSubmit = () => {
     this.context.dispatch(ActionCreators.auth.update(this.props.currentUser.id, {
-      fName: this.state.form.fName,
-      lastName: this.state.form.lName,
-      onBoarding: 'drive-or-rider'
+      ...this.props.currentUser,
+      firstName: this.state.form.firstName,
+      lastName: this.state.form.lastName
     }));
   };
 

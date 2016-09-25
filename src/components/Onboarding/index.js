@@ -18,6 +18,10 @@ class Onboarding extends Component {
     router: PropTypes.object.isRequired
   };
 
+  state = {
+    stageIndex: 0
+  };
+
   componentWillMount() {
     if (this.props.currentUser.onboarding == '') {
       this.context.router.push('/dashboard');
@@ -32,7 +36,7 @@ class Onboarding extends Component {
 
   render() {
     const {currentUser} = this.props;
-    const stage = React.cloneElement(STAGES[currentUser.onboarding], {currentUser});
+    const stage = React.cloneElement(STAGES[this.state.stageIndex], {currentUser, onFinish: this._handleNextStage});
 
     return (
       <div className='Onboarding'>
@@ -40,6 +44,15 @@ class Onboarding extends Component {
       </div>
     );
   }
+
+  _handleNextStage = () => {
+    if (this.state.stageIndex === STAGES.length - 1) {
+      this.context.router.replace('/dashboard');
+      return;
+    }
+
+    this.setState({stageIndex: this.state.stageIndex + 1});
+  };
 
 }
 

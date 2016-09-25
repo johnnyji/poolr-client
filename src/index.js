@@ -10,7 +10,7 @@ import Dashboard from './components/Dashboard';
 import Landing from './components/Landing';
 import Login from './components/Login';
 import TripsIndex from './components/Trips';
-import TripsShow from './components/Trips/show';
+import TripsCreate from './components/Trips/create';
 
 const routes = (
   <Route component={App} path='/'>

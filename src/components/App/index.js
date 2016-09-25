@@ -5,7 +5,7 @@ import CenteredSpinner from '../shared/CenteredSpinner';
 import FlashMessageContainer from '../shared/FlashMessage/FlashMessageContainer';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import {presets, RouteTransition} from 'react-router-transition';
-import './index.css';
+import './index.scss';
 
 // This is for flash message animating
 require('velocity-animate/velocity.ui');
@@ -44,8 +44,13 @@ class App extends Component {
 
     return (
       <div className="App">
-        <FlashMessageContainer items={this.props.flashMessages.valueSeq().toList()} onDismiss={this._handleDismissFlash} />
+        <FlashMessageContainer
+          className='message-container'
+          messageClassName='message-container'
+          items={this.props.flashMessages.valueSeq().toList()}
+            onDismiss={this._handleDismissFlash} />
         <RouteTransition
+          className='App-transition-wrapper'
           component='div'
           runOnMount={true}
           pathname={this.props.location.pathname}

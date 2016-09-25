@@ -19,16 +19,18 @@ class Login extends Component {
 
   componentWillReceiveProps({currentUser}) {
     if (!this.props.currentUser && currentUser) {
-      this.context.router.replace('/dashboard');
+      this.context.router.replace('/onboarding');
     }
   }
-  
+
   render() {
     return (
-      <div className='Login'>
-        <Button disabled={this.props.authing} onClick={this._handleLogin}>
-          {!this.props.authing ? 'Login with Linkedin' : 'Loading'}
-        </Button>
+      <div className='container-gradient'>
+        <div className='Login'>
+          <Button className='button button-white-outline' disabled={this.props.authing} onClick={this._handleLogin}>
+            {!this.props.authing ? 'Login with Linkedin' : 'Loading'}
+          </Button>
+        </div>
       </div>
     );
   }
