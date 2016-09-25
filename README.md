@@ -1,4 +1,4 @@
-# StartupWeekend2016
+# Poolr Client
 
 ## Highlights:
 
