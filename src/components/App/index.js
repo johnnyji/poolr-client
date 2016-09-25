@@ -14,6 +14,7 @@ class App extends Component {
 
   static propTypes = {
     currentUser: PropTypes.object,
+    dispatch: PropTypes.func.isRequired,
     flashMessages: ImmutablePropTypes.orderedMap,
     location: PropTypes.object.isRequired
   };
@@ -21,6 +22,16 @@ class App extends Component {
   static contextTypes = {
     router: PropTypes.object.isRequired
   };
+
+  static childContextTypes = {
+    dispatch: PropTypes.func.isRequired
+  };
+
+  getChildContext() {
+    return {
+      dispatch: this.props.dispatch
+    };
+  }
 
   componentWillMount() {
     if (this.props.currentUser) {

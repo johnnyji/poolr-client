@@ -1,9 +1,13 @@
 import React, {Component, PropTypes} from 'react';
 import OnboardingProfile from './OnboardingProfile';
+import OnboardingDriverOrRider from './OnboardingDriverOrRider';
+import OnboardingDriverCreds from './OnboardingDriverCreds';
 import './index.css';
 
 const STAGES = [
-  profile: OnboardingProfile
+  'profile': OnboardingProfile,
+  'driver-or-rider': OnboardingDriverOrRider,
+  'driver-creds': OnboardingDriverCreds
 ];
 
 class Onboarding extends Component {
