@@ -13,6 +13,12 @@ class TripsIndex extends Component {
   render() {
     return (
       <div className='TripsIndex'>
+        <header>
+          <Link to='/dashboard/trips/create'>
+            <Icon name='add' />
+            MY TRIPS
+          </Link>
+        </header>
         {this._renderTrips}
       </div>
     );

@@ -1,22 +1,18 @@
 import React, {Component, PropTypes} from 'react';
 import GoogleMap from 'google-map-react';
 import secrets from '../../../../../secrets';
-
-const LAT_LNG = PropTypes.shape({
-  lat: PropTypes.number.isRequired,
-  lng: PropTypes.number.isRequired
-});
+import CustomPropTypes from '../../../../utils/CustomPropTypes';
 
 export default class TripMap extends Component {
 
   static displayName = 'TripMap';
 
   static propTypes = {
-    center: LAT_LNG.isRequired,
+    center: CustomPropTypes.latLng.isRequired,
     zoom: PropTypes.number.isRequired,
     markers: PropTypes.shape({
-      start: LAT_LNG.isRequired,
-      end: LAT_LNG.isRequired
+      start: CustomPropTypes.latLng.isRequired,
+      end: CustomPropTypes.latLng.isRequired
     })
   };
 
@@ -41,8 +37,12 @@ export default class TripMap extends Component {
 
   _renderMarkers = () => {
     const {markers} = this.props;
-
     if (!markers) return null;
+
+    return [
+      <TripMapMarker lat={markers.start.lat} lng={markers.start.lng} text='A' />,
+      <TripMapMarker lat={markers.end.lat} lng={markers.end.lng} text='B' />
+    ];
   };
 
 }
