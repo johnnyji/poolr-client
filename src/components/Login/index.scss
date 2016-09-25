@@ -1,5 +1,13 @@
 @import '../../colors.scss';
+@import '../../fonts.scss';
+@import '../../mixins.scss';
+@import '../../buttons.scss';
+@import '../../layout.scss';
 
 .Login {
-  background-color: $white;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-items: center;
+	text-align: center;
 }

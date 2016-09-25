@@ -2,9 +2,9 @@ import React, {Component, PropTypes} from 'react';
 import OnboardingProfile from './OnboardingProfile';
 import './index.css';
 
-const STAGES = [
+const STAGES = {
   profile: OnboardingProfile
-];
+};
 
 class Onboarding extends Component {
 

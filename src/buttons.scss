@@ -1,0 +1,25 @@
+@import '../../fonts.scss';
+
+button {
+	border: 0;
+	outline: 0;
+	height: 50px;
+	line-height: 50px;
+	color: white;
+	padding: 0;
+	border-radius: 25px;
+}
+.button-white-outline {
+	border: 3px solid white;
+	color: white;
+	font-size: 16px;
+	padding: 0 20px;
+	font-family: 'Avenir Next';
+	margin: 0 auto;
+}
+.button-gradient {
+	padding: 0 20px;
+	font-size: 16px;
+	font-family: 'Avenir Next';
+	@include gradientD2($purple, $blue);
+}
