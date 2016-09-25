@@ -9,12 +9,16 @@ import App from './components/App';
 import Dashboard from './components/Dashboard';
 import Landing from './components/Landing';
 import Login from './components/Login';
+import TripsIndex from './components/Trips';
+import TripsShow from './components/Trips/show';
 
 const routes = (
   <Route component={App} path='/'>
     <IndexRoute component={Landing} />
     <Route component={Login} path='login' />
     <Route component={Dashboard} path='dashboard'>
+      <Route component={TripsIndex} path='trips' />
+      <Route component={TripsCreate} path='trips/create' />
     </Route>
   </Route>
 );
